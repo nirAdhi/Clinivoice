@@ -12,6 +12,7 @@ COPY desktop/package*.json ./desktop/
 RUN cd desktop && npm ci
 
 COPY . .
+RUN chmod +x ./desktop/node_modules/.bin/vite
 RUN cd desktop && npm run build
 
 # ---- Production stage ----
